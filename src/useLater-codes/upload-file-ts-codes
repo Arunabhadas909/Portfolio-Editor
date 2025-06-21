@@ -6,9 +6,16 @@ import { transpileModule } from 'typescript';
 // import * as pdfjsLib from 'pdfjs-dist';
 // import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.entry';
 
-import { getDocument, GlobalWorkerOptions, PDFDocumentProxy } from 'pdfjs-dist';
-import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs';
-import { Router } from '@angular/router';
+
+
+//THIS PART IS INCLUDED NOT COMMENTED
+    // import { getDocument, GlobalWorkerOptions, PDFDocumentProxy } from 'pdfjs-dist';
+    // import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs';
+//THIS PART IS INCLUDED NOT COMMENTED
+
+
+
+
 // import { GlobalWorkerOptions } from 'pdfjs-dist';
 // GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
 
@@ -29,11 +36,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-constructor(private routes:Router){}
-
-
-
   title = 'admin';
 
   textEntered: string='';
@@ -43,13 +45,9 @@ constructor(private routes:Router){}
 
   hovered = false;
 
-  goToHome= false;
 
 isClickedUploadButton = false;  
 showEditButton=false;
-
-
-showSidebar = false;
 
 isIconClicked = false;
 
@@ -150,6 +148,35 @@ showProject()
 
         console.log(reader);
       } 
+      
+      // else if (type === 'application/pdf') {
+      //   const reader = new FileReader();
+      //   reader.onload = async () => {
+      //     const pdfData = new Uint8Array(reader.result as ArrayBuffer);
+      //     const pdf: PDFDocumentProxy = await getDocument({ data: pdfData }).promise;
+      //     const page = await pdf.getPage(1);
+
+      //     const canvas = document.createElement('canvas');
+      //     const ctx = canvas.getContext('2d')!;
+      //     const viewport = page.getViewport({ scale: 1.5 });
+
+      //     canvas.height = viewport.height;
+      //     canvas.width = viewport.width;
+
+      //     await page.render({ canvasContext: ctx, viewport }).promise;
+
+      //     const thumbnail = canvas.toDataURL();
+
+      //     this.files.push({
+      //       name: file.name,
+      //       url: reader.result as string,
+      //       thumbnail,
+      //       type,
+      //     });
+      //   };
+      //   reader.readAsArrayBuffer(file);
+      // }
+      
       else {
         const reader = new FileReader();
         reader.onload = () => {
@@ -171,11 +198,6 @@ showProject()
     this.files.splice(index, 1);
   }
 
-
-  goToUser()
-  {
-   this.routes.navigate(['/userComp'])
-  }
   
 
 }

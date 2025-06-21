@@ -1,0 +1,137 @@
+ <!-- PROJECTS SECTION -->
+
+<div class=" container rounded ">
+
+  <div class="container text-center">
+      <h2>Projects</h2> 
+  </div>
+  
+
+
+
+
+
+<div class="row g-5 p-2 mx-2"  >
+
+    <!-- <div class="row"> -->
+    <div class="col-md-4 mb-4" *ngFor="let file of files; let i = index">
+      <div class="card h-100 profile-image">
+        <img [src]="file.thumbnail" class="card-img-top profile-image" alt="Preview" />
+        <div class="card-body">
+          <h5 class="card-title">{{ file.name }}</h5> 
+          <p class="card-text">{{ file.type }}</p>
+          <a [href]="file.url" target="_blank" class="btn btn-primary btn-sm">Open</a>
+          <button (click)="deleteFile(i)" class="btn btn-danger btn-sm ms-2">Delete</button>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+  <!-- </div> -->
+
+
+  <div class="col-2 border rounded project-box text-center mx-2" *ngFor="let project of Projects">
+
+   <p class="text-secondary">Upload Project File </p> 
+      <i class="bi bi-file-earmark-arrow-up project-icon "></i>
+    
+    <div>
+ <button class="btn btn-secondary  m-2"  data-bs-toggle="modal" data-bs-target="#chooseProjectModal">
+      Upload File
+    </button>
+    </div> 
+  <!-- </div> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+ 
+  <!-- </div> -->
+ 
+<!-- {{isClickedUploadButton}} -->
+
+  <div  id="chooseProjectModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Choose Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="file"  class="form-control mb-3" (change)="onProjectSelected($event)">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Save changes</button>
+      </div>                                                             
+    </div>
+  </div>
+</div>
+
+</div>
+ 
+  <!-- <div class="col-6">
+    <textarea class="fillWidth" name="" id="" placeholder="Edit Content"></textarea>
+
+    <textarea
+  class="form-control bg-secondary"
+  [style.width.%]="100"
+  rows="5"
+></textarea>
+  </div> -->
+  <!-- <div [ngSwitch]="showDiv"   class="col"> -->
+      <!-- <ng-template *ngIf="toBeEdited;" #editText>
+
+
+      <div *ngSwitchCase="'div1'" class="p-4  border text-center " >
+        <i class="bi bi-pencil  m-2" style="cursor: pointer;" (click)="isIconClicked=!isIconClicked" ></i>
+        <p>Your Content Here</p>
+      </div>
+      </ng-template> -->
+
+         <!-- <div *ngSwitchCase="'div1'" class="p-4  border text-center " >
+        <i class="bi bi-pencil  m-2" style="cursor: pointer;" (click)="showDiv='div2' " ></i>
+        <p>Your Content Here</p>
+      </div> -->
+
+      <!-- <div *ngSwitchCase="'div2'"  id="textArea" *ngIf="isIconClicked; else editText ">
+         <textarea class="fillWidth" name="" id="" placeholder="Edit Content"></textarea> 
+
+        <textarea class="form-control bg-secondary" (change)="storeText($event)" [style.width.%]="100" rows="5" value="textEntered" ></textarea>
+
+        <button class="bg bg-secondary border rounded m-1"> <i class="bi bi-save  m-2" style="cursor: pointer;" (click)="isSaved=!isSaved; isIconClicked=!isIconClicked" data-bs-toggle="collapse" data-bs-target="#textArea"> Save </i></button>
+
+      </div> -->
+
+      <!-- <div *ngSwitchCase="'div2'"  id="textArea" >
+       
+        <textarea class="form-control bg-transparent text-light" (change)="storeText($event)" [style.width.%]="100" rows="5" value="textEntered" ></textarea>
+
+        <button class="bg bg-secondary border rounded m-1"> <i class="bi bi-save  m-2" style="cursor: pointer;" (click)="showDiv='div3'" data-bs-toggle="collapse" data-bs-target="#textArea"> Save </i></button>
+
+      </div> -->
+      <!-- After Saving the state of the user logging status-->
+
+      <!-- <div *ngSwitchCase="'div3'"  *ngIf="isSaved" class="text-center col bg-transparent">
+          {{textEntered}}
+      </div> -->
+
+      <!-- <div id="profileSummary" *ngSwitchCase="'div3'" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" [ngClass]="{'isHovered': hovered}" class="text-center col bg-transparent p-2 m-1">
+         <p> {{textEntered}}  </p> 
+         <i *ngIf="showEditButton" class="bi bi-pencil m-1 editbuttonOnhover" (click)="showDiv='div2'"></i>
+      </div>
+      <div>
+          
+      </div> -->
+
+  <!-- </div> -->
+
+</div>
+ 
+

@@ -1,7 +1,7 @@
-/* .upload-image
+.upload-image
 {
     border:  dashed;
-  
+    /* background-image:  */
 
     cursor: pointer;
     
@@ -54,7 +54,7 @@
 .downloadButton
 {
     cursor: pointer;
-  
+    /* font-size: 20px; */
 }
 .menu
 {
@@ -93,7 +93,7 @@
 .downloadButtonFont:hover
 {
     background-color: gray;
-  
+    /* color: white; */
 
 
 }
@@ -113,7 +113,7 @@
 .menu-items
 {
     cursor: pointer;
-    
+    /* color:gray; */
     
 }
 .menu-items:hover 
@@ -135,4 +135,4 @@
 {
     background-color: gray;
     text-decoration-color: black;
-} */
+}

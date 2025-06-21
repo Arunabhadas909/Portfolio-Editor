@@ -1,0 +1,84 @@
+<!--SKILLS AND EXPERTISE SECTION-->
+
+
+<div class="container-fluid rounded ">
+
+    <div class=" container-fluid text-center m-3 p-5">
+            <h2>Skills and Expertise</h2>
+    </div>
+
+
+<div [ngSwitch]="showSkill">
+
+
+
+    <div class="container-fluid" *ngIf="skillAdded">
+        <div class=" row row-cols-auto m-2">
+
+            <div *ngFor="let skill of skills; let i = index " class="col m-2">
+                
+                <div class="card text-center bg-transparent border rounded">
+                    <!-- <div class="text-center m-2">
+                        <p class="text-secondary font " >{{skill.name | titlecase}}</p>
+                    </div> -->
+                    <div class="text-center m-2 max-height">
+                        <img [src]="skill.img" alt="Skill Image" class="card-body skill-image rounded-5 " >
+                    </div>
+
+                    <div class="text-center m-2">
+                        <p class="text-secondary font " >{{skill.name | titlecase}}</p>
+                    </div>
+
+                    <div class="text-center m-2"> 
+                        <button (click)="deleteSkill(i)" class="btn btn-danger btn-sm ms-2">Delete</button>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+ <!-- <button (click)="getskills()" class="btn btn-primary btn-sm ms-2">See Skills</button> -->
+
+ <!-- {{gotSkills}} -->
+
+    <div *ngSwitchCase="'div1'" class="m-2">
+
+    <div class="col-2 text-center mx-2 " *ngFor="let addSkill of addSkills">
+
+    <!-- <p class="text-secondary">Add Skill </p>  -->
+    <button class="btn btn-secondary link-button-style" (click)="showSkill='div2'" ><i class="bi bi-plus-circle-dotted font"></i>Add Skill</button>
+
+
+    </div>
+
+    </div>
+
+    <div *ngSwitchCase="'div2'" class=" col-3 border rounded bg-transparent">
+
+            <div>
+                <p class="m-2">Add Skill name</p>
+                <input class="bg-light border rounded m-2" type="text" placeholder="Java,C#,C++,NodeJS,..." [(ngModel)]="skillName" required>
+            </div>
+
+            <div>
+                <p class="m-2">Add skill image URL</p>
+
+               <input class="bg-light border rounded m-2" type="url" placeholder="https://example.com" [(ngModel)]="skillImg" required>
+
+            </div>
+            <div class="row-cols-auto">
+                <button class="btn btn-primary m-2 col" (click)="saveSkill()" > Save </button>
+                <button class="bg bg-light border rounded m-1 col" (click)="goBack()">Cancel</button>
+            </div>
+    </div>
+
+</div>
+
+
+</div>

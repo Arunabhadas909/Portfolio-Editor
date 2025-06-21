@@ -1,0 +1,58 @@
+.upload-image
+{
+    border:  dashed;
+    /* background-image:  */
+
+    cursor: pointer;
+    
+}
+
+.font
+{
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+}
+
+
+.fullWidth
+{
+    width: 100vh;
+}
+
+.profile-image
+{
+    max-width: 200px;
+}
+.upload-button
+{
+    cursor:pointer;
+}
+
+.isHovered
+{
+    opacity: 4px;
+}
+.editbuttonOnhover
+{
+        cursor: pointer;
+        
+}
+
+.project-box
+{
+    border-style: dashed;
+}
+
+.project-icon
+{
+       font-size: 50px;
+    color: black;
+    cursor: pointer;
+}
+
+.link-button-style
+{
+    font-style: italic;
+}
+

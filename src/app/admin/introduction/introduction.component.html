@@ -1,0 +1,152 @@
+<div class=" container-fluid   rounded ">
+
+
+
+<div class="row g-5">
+
+  <div class="col m-3 p-5 ">
+
+      <div *ngIf="previewUrl; else uploadImage " class="mt-3  rounded-circle text-center align-middle">
+      <div >
+
+        <img [src]="previewUrl" alt="Preview" class="img-thumbnail  profile-image border rounded-circle " [style.width.%] ="100" />
+
+
+      </div>
+        
+        <div [ngSwitch] = showWork class=" mt-3 text-center align-middle ">
+
+
+        <div *ngSwitchCase="'div2'" class="text-center">
+          <div class="row text-center">
+               
+
+               <h2>{{username |  titlecase}} </h2>
+              <!-- <button class="col btn btn-primary" (click)="saveName($event)"> Save </button> -->
+          </div>    
+           <div class="row  text-center">
+              
+
+              <h2> {{designation |  titlecase}} </h2>
+              <!-- <button class="col btn btn-primary" (click)="saveDesignation($event)"> Save </button> -->
+          </div>  
+       
+        </div>
+
+
+
+          <div *ngSwitchCase="'div1'">
+          <div class="row row-cols-auto">
+              What's Your Name: <input type="text" class="col form-control text-dark"  [(ngModel)] = "username">
+              <!-- <button class="col btn btn-primary" (click)="saveName($event)"> Save </button> -->
+          </div>    
+           <div class="row row-cols-auto">
+              What do you do ?: <input type="text" class="col form-control text-dark"  [(ngModel)] = "designation">
+              <button class="col btn btn-primary" (click)="saveDesignation($event)"> Save </button>
+          </div>  
+       
+        </div>
+
+        </div>
+        
+
+
+
+        
+      </div>
+
+
+
+<ng-template #uploadImage >
+       <div  class="upload-image border rounded-circle col-text-start text-center bg-light align-middle " data-bs-toggle="modal" data-bs-target="#chooseImageModal" [style.height.%] ="100" >
+        <i class="bi bi-camera-fill  font"></i>
+      </div>
+      <div class="container text-center " >
+    
+               <button type="button" class=" btn btn-secondary  p-2"   data-bs-toggle="modal" data-bs-target="#chooseImageModal">Upload Image</button> 
+     
+      </div>
+</ng-template>
+
+ 
+  </div>
+ 
+
+
+  <div  id="chooseImageModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="file" accept="image/*" class="form-control" (change)="onFileSelected($event)">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+  <!-- <div class="col-6">
+    <textarea class="fillWidth" name="" id="" placeholder="Edit Content"></textarea>
+
+    <textarea
+  class="form-control bg-secondary"
+  [style.width.%]="100"
+  rows="5"
+></textarea>
+  </div> -->
+  <div [ngSwitch]="showDiv"   class="col">
+     
+      <h2>About</h2>
+         <div *ngSwitchCase="'div1'" class="p-4  border text-center " >
+        <i class="bi bi-pencil  m-2" style="cursor: pointer;" (click)="showDiv='div2' " ></i>
+        <p>Your Content Here</p>
+      </div>
+
+
+      <div *ngSwitchCase="'div2'"  id="textArea" >
+    
+
+        <textarea class="form-control bg-transparent text-light about-font" (change)="storeText($event)" [style.width.%]="100" rows="5" value="textEntered" required></textarea>
+        <div class="text-start">
+          <button class="bg bg-secondary border rounded m-1"><i class="bi bi-save  m-2" style="cursor: pointer;" (click)="showDiv='div3'" data-bs-toggle="collapse" data-bs-target="#textArea"> Save </i></button>
+          <button class="bg bg-light border rounded m-1" (click)="goBack()">Cancel</button>
+        </div>
+        <!-- <button class="bg bg-secondary border rounded m-1"><i class="bi bi-save  m-2" style="cursor: pointer;" (click)="showDiv='div3'" data-bs-toggle="collapse" data-bs-target="#textArea"> Save </i></button> -->
+
+      </div>
+      <!-- After Saving the state of the user logging status-->
+
+ 
+
+      <div id="profileSummary" *ngSwitchCase="'div3'" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" [ngClass]="{'isHovered': hovered}" class="text-center col bg-transparent p-2 m-1 about-font">
+         <p class="text-view"> {{textEntered}}  </p> 
+         <i *ngIf="showEditButton" class="bi bi-pencil m-1 editbuttonOnhover" (click)="showDiv='div2'"></i>
+      </div>
+   
+  <!-- <div class="row row-cols-auto text-center m-2">
+    <a href="https://www.linkedin.com/in/arunabha10/" target="_blank"><i class="bi bi-linkedin col font-net" ></i></a>
+    <a href="https://github.com/Arunabhadas909" target="_blank"><i class="bi bi-github col font-net" ></i></a>
+    <a href="" target="_blank"><i class="bi bi-instagram col font-net"></i></a>
+    <a href="https://x.com/Arunabh65448201" target="_blank"><i class="bi bi-twitter-x col font-net" ></i></a>
+    
+  </div> -->
+  </div>
+
+  <!-- <div class="row text-center">
+    <i class="bi bi-linkedin col-2"></i>
+    <i class="bi bi-github col-2"></i>
+  </div> -->
+
+</div>
+ 
+
+  
+</div>

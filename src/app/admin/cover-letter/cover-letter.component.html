@@ -1,0 +1,50 @@
+<div class="container-fluid rounded">
+
+    <div class="text-center">
+
+        <h2>Cover Letter</h2>
+
+    </div>
+
+
+    <div [ngSwitch]="showDiv"  class="col p-2 m-2">
+     
+      <!-- <h2>About</h2> -->
+         <div *ngSwitchCase="'div1'" class="p-4  border text-center " >
+        <i class="bi bi-pencil  m-2" style="cursor: pointer;" (click)="showDiv='div2'"></i>
+        <p>Your Content Here</p>
+      </div>
+
+
+      <div *ngSwitchCase="'div2'"  id="textArea" >
+    
+        <!-- <div > -->
+             <textarea class="form-control bg-transparent text-light" (change)="storeText($event)" [style.width.%]="100" rows="10" value="textEntered" ></textarea>
+   
+        <!-- </div> -->
+        <!-- <textarea class="form-control bg-transparent text-light" (change)="storeText($event)" [style.width.%]="100" rows="10" value="textEntered" ></textarea> -->
+        <div class="text-start">
+            <button class="bg bg-secondary border rounded m-1"> <i class="bi bi-save  m-2" style="cursor: pointer;" (click)="showDiv='div3'" data-bs-toggle="collapse" data-bs-target="#textArea"> Save </i></button>
+            <button class="bg bg-light border rounded m-1" (click)="goBack()">Cancel</button>
+        </div>
+        <!-- <div>
+            <button class="bg bg-transparent border rounded m-1">Cancel</button>
+        </div> -->
+        <!-- <button class="bg bg-secondary border rounded m-1"> <i class="bi bi-save  m-2" style="cursor: pointer;" (click)="showDiv='div3'" data-bs-toggle="collapse" data-bs-target="#textArea"> Save </i></button> -->
+
+      </div>
+      <!-- After Saving the state of the user logging status-->
+
+ 
+
+      <div id="profileSummary" *ngSwitchCase="'div3'" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" [ngClass]="{'isHovered': hovered}" class=" container text-start col bg-transparent p-2 m-1">
+         <p class="text-view"> {{textEntered}}  </p> 
+         <div class="text-center">
+            <i *ngIf="showEditButton" class="bi bi-pencil m-1 editbuttonOnhover" (click)="showDiv='div2'"></i>
+         </div>
+         <!-- <i *ngIf="showEditButton" class="bi bi-pencil m-1 editbuttonOnhover" (click)="showDiv='div2'"></i> -->
+      </div>
+    
+    </div>
+
+</div>

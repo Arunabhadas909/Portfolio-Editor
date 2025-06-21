@@ -1,0 +1,16 @@
+.isHovered
+{
+    opacity: 4px;
+}
+
+.editbuttonOnhover
+{
+        cursor: pointer;
+        
+}
+
+.text-view
+{
+
+    white-space: pre-wrap;
+}
