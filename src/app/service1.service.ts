@@ -61,9 +61,8 @@ export class Service1Service {
   
 
   backendUrl = "https://portfolio-editor-backend-1.onrender.com/admin";
-  backendUserUrl = "https://portfolio-editor-backend-1.onrender.com//user" ;
-
-  backendStoreUrl="hhttps://portfolio-editor-backend-1.onrender.com/dataSelected";
+  backendUserUrl = "https://portfolio-editor-backend-1.onrender.com/user" ;
+  backendStoreUrl="https://portfolio-editor-backend-1.onrender.com/dataSelected";
 
   readLink:ReadLink =
   {
