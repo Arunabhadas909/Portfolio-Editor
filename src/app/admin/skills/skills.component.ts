@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { string } from 'mathjs';
+// import { string } from 'mathjs';
 import { Service1Service } from '../../service1.service';
 import { skillsSchema } from '../../interface';
 
