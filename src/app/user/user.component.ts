@@ -380,7 +380,7 @@ this.service.passDataToDatabase('/data', formData).subscribe(
     // });
 
 
-    window.location.href = 'http://localhost:4300';
+    window.location.href = 'https://portfolio-arunabha.netlify.app/';
   }
     
 
