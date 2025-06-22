@@ -294,6 +294,7 @@ this.service.passDataToDatabase('/data', formData).subscribe(
 
         (response) =>
           {
+              this.reloadComponent();
               console.log(response);
           },
         (error) =>
@@ -308,7 +309,7 @@ this.service.passDataToDatabase('/data', formData).subscribe(
 
 }
 
-  this.reloadComponent();
+  // this.reloadComponent();
 
 // formData.append('data', JSON.stringify({
 //   coverLettertextEntered: details.coverLettertextEntered,
