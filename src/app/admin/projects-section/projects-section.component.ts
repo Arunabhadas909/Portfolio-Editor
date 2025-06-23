@@ -316,7 +316,17 @@ goBack()
 
   ngOnInit()
   {
+
+    this.service.data$.subscribe( (updatedData) =>
+      {
+        this.data = updatedData;
+         this.projects = updatedData.projects ?? '';
+
+        //  this.previewUrl = updatedData.previewUrl;
+            console.log(this.data);
+            console.log('projects: '  , this.projects);
     getProjects();
+      });
   }
 
 }
