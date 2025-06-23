@@ -6,7 +6,7 @@ import { Service1Service } from 'src/app/service1.service';
   templateUrl: './introduction.component.html',
   styleUrls: ['./introduction.component.css']
 })
-export class IntroductionComponent implement OnInit{
+export class IntroductionComponent implements OnInit{
 
 constructor(private service:Service1Service){}
 
