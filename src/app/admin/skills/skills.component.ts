@@ -93,7 +93,7 @@ getskills()
       {
 
         const skillsFound =  skills;
-        this.gotSkills.push(skills);
+        this.skills.push(skills);
         console.log(this.gotSkills);
 
         // console.log("Skills found")
