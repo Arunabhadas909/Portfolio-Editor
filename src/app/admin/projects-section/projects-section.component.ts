@@ -291,7 +291,7 @@ goBack()
 
 
 
-  getProjects()
+getProjects()
 {
   console.log("getting projects");
   this.service.getDataFromDatabase('/data').subscribe( async (info) =>
@@ -317,16 +317,16 @@ goBack()
   ngOnInit()
   {
 
-    this.service.data$.subscribe( (updatedData) =>
-      {
-        this.data = updatedData;
-         this.projects = updatedData.projects ?? '';
+    // this.service.data$.subscribe( (updatedData) =>
+    //   {
+    //     this.data = updatedData;
+    //      this.projects = updatedData.projects ?? '';
 
-        //  this.previewUrl = updatedData.previewUrl;
-            console.log(this.data);
-            console.log('projects: '  , this.projects);
+    //     //  this.previewUrl = updatedData.previewUrl;
+    //         console.log(this.data);
+    //         console.log('projects: '  , this.projects);
     getProjects();
-      });
+      // });
   }
 
 }
