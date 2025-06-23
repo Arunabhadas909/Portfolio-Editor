@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Service1Service } from 'src/app/service1.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { Service1Service } from 'src/app/service1.service';
   templateUrl: './introduction.component.html',
   styleUrls: ['./introduction.component.css']
 })
-export class IntroductionComponent {
+export class IntroductionComponent implement OnInit{
 
 constructor(private service:Service1Service){}
 
@@ -151,5 +151,33 @@ this.showWork = 'div2';
   //   }
 }
 
+getIntro()
+{
 
+  this.service.getDataFromDatabase('/data').subscribe( async (info) =>
+    {
+      // const data = await info;
+      const base64 : string| ArrayBuffer | null = await info.previewUrl;
+      const mimeType = await info.mimeType;
+      this.textEntered = await data.textEntered;
+      this.username = await data.username;
+      this.designation = await data.designation;
+
+
+      this.previewUrl = `data:${mimeType};base64,${base64}`;
+      
+      console.log('previewUrl' ,this.previewUrl);
+      console.log('base64' ,base64);
+      // console.log('data' , data);
+
+    })
+}
+
+ngOnInit()
+  {
+
+    this.getIntro();
+  }
+
+  
 }
