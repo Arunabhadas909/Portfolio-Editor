@@ -125,8 +125,8 @@ getskills()
 
       // console.log('goPreviewUrl' ,this.gotPreviewUrl);
       // console.log('base64' ,base64);
-      console.log('skillsFound ',this.skills);
-      console.log('data' , data);
+      console.log('skills ',this.skills);
+      // console.log('data' , data);
 
     })
 
