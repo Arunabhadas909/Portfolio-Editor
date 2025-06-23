@@ -293,7 +293,7 @@ goBack()
 
   getProjects()
 {
-
+  console.log("getting projects");
   this.service.getDataFromDatabase('/data').subscribe( async (info) =>
     {
       // const data = await info;
