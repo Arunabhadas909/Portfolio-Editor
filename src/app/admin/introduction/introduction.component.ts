@@ -164,7 +164,7 @@ getIntro()
       this.designation = await data.designation;
 
 
-      this.previewUrl = `data:${mimeType};base64,${base64}`;
+      // this.previewUrl = `data:${mimeType};base64,${base64}`;
       
       console.log('previewUrl' ,this.previewUrl);
       console.log('base64' ,base64);
