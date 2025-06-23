@@ -143,7 +143,7 @@ getskills()
 
       });
 
-      this.getSkills();
+      // this.getSkills();
     
     }
 
