@@ -19,7 +19,7 @@
       <div *ngSwitchCase="'div2'"  id="textArea" >
     
         <!-- <div > -->
-             <textarea class="form-control bg-transparent text-light" (change)="storeText($event)" [style.width.%]="100" rows="10" value="textEntered" ></textarea>
+             <textarea class="form-control bg-transparent text-light" (change)="storeText($event)" [style.width.%]="100" rows="10" [value]="textEntered" ></textarea>
    
         <!-- </div> -->
         <!-- <textarea class="form-control bg-transparent text-light" (change)="storeText($event)" [style.width.%]="100" rows="10" value="textEntered" ></textarea> -->
