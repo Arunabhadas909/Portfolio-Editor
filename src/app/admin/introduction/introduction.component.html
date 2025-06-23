@@ -114,7 +114,7 @@
       <div *ngSwitchCase="'div2'"  id="textArea" >
     
 
-        <textarea class="form-control bg-transparent text-light about-font" (change)="storeText($event)" [style.width.%]="100" rows="5" value="textEntered" required></textarea>
+        <textarea class="form-control bg-transparent text-light about-font" (change)="storeText($event)" [style.width.%]="100" rows="5" [value]="textEntered" required></textarea>
         <div class="text-start">
           <button class="bg bg-secondary border rounded m-1"><i class="bi bi-save  m-2" style="cursor: pointer;" (click)="showDiv='div3'" data-bs-toggle="collapse" data-bs-target="#textArea"> Save </i></button>
           <button class="bg bg-light border rounded m-1" (click)="goBack()">Cancel</button>
