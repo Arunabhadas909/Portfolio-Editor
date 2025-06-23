@@ -166,7 +166,7 @@ getskills()
 
       });
 
-      this.getSkills();
+      this.getskills();
     
     }
 
