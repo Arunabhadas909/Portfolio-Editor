@@ -325,7 +325,7 @@ getProjects()
     //     //  this.previewUrl = updatedData.previewUrl;
     //         console.log(this.data);
     //         console.log('projects: '  , this.projects);
-    getProjects();
+    this.getProjects();
       // });
   }
 
