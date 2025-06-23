@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,7 @@ import { projectSchema, ReadLink } from '../../interface';
   templateUrl: './projects-section.component.html',
   styleUrls: ['./projects-section.component.css']
 })
-export class ProjectsSectionComponent {
+export class ProjectsSectionComponent implements OnInit {
 
 
   constructor(private service:Service1Service){}
@@ -288,5 +288,35 @@ goBack()
 
 //     });
 // }
+
+
+
+  getProjects()
+{
+
+  this.service.getDataFromDatabase('/data').subscribe( async (info) =>
+    {
+      // const data = await info;
+      // const base64 : string| ArrayBuffer | null = await info.previewUrl;
+      // const mimeType = await info.mimeType;
+
+      // this.gotPreviewUrl = `data:${mimeType};base64,${base64}`;
+      this.projects= await info.projects;
+
+
+      // console.log('goPreviewUrl' ,this.gotPreviewUrl);
+      // console.log('base64' ,base64);
+      console.log('projects ',this.projects);
+      // console.log('data' , data);
+
+    })
+}
+
+
+
+  ngOnInit()
+  {
+    getProjects();
+  }
 
 }
