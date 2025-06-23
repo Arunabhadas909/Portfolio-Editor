@@ -126,4 +126,27 @@ getskills()
   this.showSkill = 'div1';
 }
 
+
+    ngOnInit()
+  {
+
+    this.service.data$.subscribe( (updatedData) =>
+      {
+        // this.data = updatedData;
+         this.skills = updatedData.skills ?? '';
+
+        //  this.previewUrl = updatedData.previewUrl;
+            // console.log(this.data);
+            console.log('skills : '  , this.skills);
+
+    // console.log('textEntered :' , this.textEntered);
+
+      });
+
+      this.getSkills();
+    
+    }
+
+
+  
 }
