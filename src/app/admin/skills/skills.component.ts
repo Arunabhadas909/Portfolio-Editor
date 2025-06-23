@@ -120,7 +120,7 @@ getskills()
       // const mimeType = await info.mimeType;
 
       // this.gotPreviewUrl = `data:${mimeType};base64,${base64}`;
-      this.skillsFound = await  info.skills;
+      this.skills = await  info.skills;
 
 
       // console.log('goPreviewUrl' ,this.gotPreviewUrl);
