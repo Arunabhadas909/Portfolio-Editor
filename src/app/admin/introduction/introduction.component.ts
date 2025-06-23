@@ -156,7 +156,7 @@ getIntro()
 
   this.service.getDataFromDatabase('/data').subscribe( async (info) =>
     {
-      // const data = await info;
+      const data = await info;
       const base64 : string| ArrayBuffer | null = await info.previewUrl;
       const mimeType = await info.mimeType;
       this.textEntered = await data.textEntered;
