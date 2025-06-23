@@ -86,30 +86,53 @@ getskills()
 
   console.log("getting skills")
 
-  this.service.getSkills('/skills', this.viewSkill).subscribe((skills:skillsSchema) => {
+  // this.service.getSkills('/skills', this.viewSkill).subscribe((skills:skillsSchema) => {
 
 
-    if(skills)
-      {
+  //   if(skills)
+  //     {
 
-        const skillsFound =  skills;
-        this.skills.push(skills);
-        console.log(this.gotSkills);
+  //       const skillsFound =  skills;
+  //       this.skills.push(skills);
+  //       console.log(this.gotSkills);
 
-        // console.log("Skills found")
+  //       // console.log("Skills found")
 
-        //        this.service.passDataToUserComp({
-        //   // textEntered:this.textEntered
+  //       //        this.service.passDataToUserComp({
+  //       //   // textEntered:this.textEntered
 
-        //   skills:this.gotSkills
-        // });
+  //       //   skills:this.gotSkills
+  //       // });
 
-      }
+  //     }
     
 
 
 
-  })
+  // })
+
+
+
+  this.service.getDataFromDatabase('/data').subscribe( async (info) =>
+    {
+      // const data = await info;
+      // const base64 : string| ArrayBuffer | null = await info.previewUrl;
+      // const mimeType = await info.mimeType;
+
+      // this.gotPreviewUrl = `data:${mimeType};base64,${base64}`;
+      this.skillsFound = await  info.skills;
+
+
+      // console.log('goPreviewUrl' ,this.gotPreviewUrl);
+      // console.log('base64' ,base64);
+      console.log('skillsFound ',this.skills);
+      console.log('data' , data);
+
+    })
+
+
+
+  
 
 
 
@@ -143,7 +166,7 @@ getskills()
 
       });
 
-      // this.getSkills();
+      this.getSkills();
     
     }
 
