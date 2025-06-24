@@ -8,7 +8,7 @@ import { transpileModule } from 'typescript';
 
 import { getDocument, GlobalWorkerOptions, PDFDocumentProxy } from 'pdfjs-dist';
 import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs';
-import { Router } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, Event as RouterEvent } from '@angular/router';
 // import { GlobalWorkerOptions } from 'pdfjs-dist';
 // GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
 
@@ -30,7 +30,35 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-constructor(private routes:Router){}
+
+
+
+     loading = false;
+
+constructor(private routes:Router){
+
+
+     this.routes.events.subscribe((event: RouterEvent) => {
+      if (event instanceof NavigationStart) {
+        this.loading = true;
+      }
+      if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        this.loading = false;
+      }
+    });
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -177,6 +205,15 @@ showProject()
    this.routes.navigate(['/userComp'])
   }
   
+
+
+
+
+
+
+
+
+
 
 }
 

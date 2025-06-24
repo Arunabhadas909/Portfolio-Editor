@@ -19,6 +19,16 @@ import { UserProjectsComponent } from './user/user-projects/user-projects.compon
 import { UserCoverletterComponent } from './user/user-coverletter/user-coverletter.component';
 import { UserFooterComponent } from './user/user-footer/user-footer.component';
 import { AdminComponent } from './admin/admin.component';
+// import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, RouterEvent } from '@angular/router';
+
+import {
+  NavigationStart,
+  NavigationEnd,
+  NavigationCancel,
+  NavigationError,
+  Event as RouterEventType
+} from '@angular/router';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +45,11 @@ import { AdminComponent } from './admin/admin.component';
     UserCoverletterComponent,
     UserFooterComponent,
     AdminComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule
+    AppRoutingModule,FormsModule,HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

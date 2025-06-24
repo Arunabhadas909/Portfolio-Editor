@@ -161,6 +161,8 @@
 
 <!-- <app-admin></app-admin> -->
  <div>
-<router-outlet></router-outlet>
+
+  <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+<router-outlet *ngIf="!loading"></router-outlet>
  </div>
 
